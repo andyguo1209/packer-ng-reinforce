@@ -16,15 +16,15 @@
 
 ## 使用官方自带工具进行签名
 
-Android官方文档已经对[apksigner](https://developer.android.com/studio/command-line/apksigner.html#options-sign-general)的使用有比较详细的解释。以Mac/Linux平台为例（Windows类似），tools工具就在$ANDROID_SDK_HOME/build-tools目录下 **（build-tools版本需要选择25以上，因为v2签名Android 7.0 以上才支持，下面使用27.0.2版本来执行）**，因为下面说说实际的操作步骤：
+Android官方文档已经对[apksigner](https://developer.android.com/studio/command-line/apksigner.html#options-sign-general)的使用有比较详细的解释。以Mac/Linux平台为例（Windows类似），tools工具就在$ANDROID_SDK_HOME/build-tools目录下 **（build-tools版本需要选择25以上，因为v2签名Android 7.0 以上才支持，下面使用27.0.2版本来执行）**，因为下面说说实际的操作步骤：
 
 1. zipalign
 
     zip对齐，因为APK包的本质是一个zip压缩文档，经过边界对齐方式优化能使包内未压缩的数据有序的排列，从而减少应用程序运行时的内存消耗 ，通过空间换时间的方式提高执行效率（zipalign后的apk包体积增大了100KB左右）。
-    打开Terminal，把目录切换到SDK/build-tools/版本号/目录下（例如我这边的目录是/opt/android/sdk/build-tools/27.0.2/），执行：
+    打开Terminal，把目录切换到SDK/build-tools/版本号/目录下（例如我这边的目录是/opt/android/sdk/build-tools/27.0.2/），执行：
     
     ```SHELL
-    cd /opt/android/sdk/build-tools/27.0.2/
+    cd /opt/android/sdk/build-tools/27.0.2/
     ./zipalign -v -p 4 input.apk output.apk
     ```
 
@@ -38,7 +38,7 @@ Android官方文档已经对[apksigner](https://developer.android.com/studio/co
 2. apksigner
 
     这个工具位于SDK目录的build-tools目录下。**必须说明的是，v2签名方式时在Android7.0后才推出的，所以只有版本>25的SDK\build-tools\中才能找到apksigner**。
-    打开Terminal，把目录切换到SDK/build-tools/版本号/目录下（例如我这边的目录是/opt/android/sdk/build-tools/27.0.2/），执行：
+    打开Terminal，把目录切换到SDK/build-tools/版本号/目录下（例如我这边的目录是/opt/android/sdk/build-tools/27.0.2/），执行：
 
     ```SHELL
     ./apksigner sign  --ks key.jks  --ks-key-alias releasekey  --ks-pass pass:pp123456  --key-pass pass:pp123456  --out output.apk  input.apk
@@ -61,10 +61,6 @@ Android官方文档已经对[apksigner](https://developer.android.com/studio/co
     ```SHELL
     ./apksigner verify -v input.apk
     ```
-
-    ![image](img/credit_query_build_verify.png)
-
-    可以看到v1、v2都已经签名成功
 
 ## 使用packer-ng-plugin命令打渠道包
 
