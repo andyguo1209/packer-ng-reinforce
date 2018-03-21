@@ -95,17 +95,17 @@ java -jar packer-ng-2.0.0.jar verify app.apk
 
 配置文件参数示例（具体配置根据实际情况来）：
 ```SHELL
-#加固后的apk文件路径
+#加固后的apk文件路径
 INPUT_APK_PATH=/data/apks/v1.0.1/360_101_jiagu_sign.apk
 #keystore文件路径
 KEYSTORE_PATH=/data/project/android/app-android-CreditQuery/app/sign/key_store.jks
-#keystore密码，建议加上引号，否则无法读取到特殊符号
+#keystore密码，建议加上引号，否则无法读取到特殊符号
 KEYSTORE_PASSWORD='f!u@d#a'
 #keystore alias名
 KEYSTORE_ALIAS=app_alias
-#keystore alias密码，建议加上引号，否则无法读取到特殊符号
+#keystore alias密码，建议加上引号，否则无法读取到特殊符号
 KEYSTORE_ALIAS_PASSWORD='f!u@d#a'
-#渠道所有渠道列表文件
+#渠道列表文件
 CHANNELS_FILE_PATH=/data/project/android/app-android-CreditQuery/channels.txt
 ```
 
