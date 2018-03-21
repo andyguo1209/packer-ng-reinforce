@@ -16,7 +16,7 @@
 
 ## 使用官方自带工具进行签名
 
-Android官方文档已经对[apksigner](https://developer.android.com/studio/command-line/apksigner.html#options-sign-general)的使用有比较详细的解释。以Mac/Linux平台为例（Windows类似），tools工具就在$ANDROID_SDK_HOME/build-tools目录下 **（build-tools版本需要选择25以上，因为v2签名Android 7.0 以上才支持，下面使用27.0.2版本来执行）**，因为下面说说实际的操作步骤：
+Android官方文档已经对[apksigner](https://developer.android.com/studio/command-line/apksigner.html#options-sign-general)的使用有比较详细的解释。以Mac/Linux平台为例（Windows类似），tools工具就在$ANDROID_SDK_HOME/build-tools目录下 **（build-tools版本需要选择25以上，因为v2签名Android 7.0 以上才支持，下面使用27.0.2版本来执行）**，因为下面说说实际的操作步骤：
 
 1. zipalign
 
@@ -118,7 +118,7 @@ CHANNELS_FILE_PATH=/data/project/android/app-android-CreditQuery/channels.txt
 ```SHELL
 ./start.sh
 ```
-
+
 如无法执行，请添加可执行权限
 
 ```SHELL
