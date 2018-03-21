@@ -128,6 +128,7 @@ sudo chmod a+x start.sh
 ## 感谢
 
 [packer-ng-plugin](https://github.com/mcxiaoke/packer-ng-plugin)
+
 [Android开发之通过apksigner对apk进行v2签名](https://www.jianshu.com/p/e1e2fd05bb62)
 
 
